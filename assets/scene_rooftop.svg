@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs><linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#09172a"/><stop offset="55%" stop-color="#11253c"/><stop offset="100%" stop-color="#050910"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<g opacity=".18" fill="#c7e1ff"><rect x="70" y="180" width="48" height="340"/><rect x="220" y="80" width="88" height="440"/><rect x="520" y="200" width="52" height="320"/><rect x="1220" y="60" width="100" height="460"/><rect x="1420" y="110" width="88" height="410"/></g>
+<rect x="0" y="560" width="1600" height="340" fill="#090f17"/><rect x="0" y="520" width="1600" height="46" fill="#101b29"/>
+<g stroke="#5e7c9b" stroke-width="8" opacity=".8"><line x1="70" y1="520" x2="1530" y2="520"/><line x1="160" y1="520" x2="160" y2="760"/><line x1="640" y1="520" x2="640" y2="760"/><line x1="1120" y1="520" x2="1120" y2="760"/></g>
+<circle cx="1310" cy="180" r="50" fill="#f6cf7d" opacity=".75"/>
+<text x="110" y="110" fill="#f4d28b" font-size="34" font-family="serif">金融街天台</text>
+<text x="110" y="838" fill="#d6ae66" font-size="40" font-family="serif">风会把谎言吹散，也会把人逼到边缘。</text>
+</svg>

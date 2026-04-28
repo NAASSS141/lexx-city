@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#060d18"/><stop offset="1" stop-color="#0c2638"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<rect x="210" y="115" width="1180" height="640" rx="24" fill="#071320" stroke="#7399bf" stroke-width="3" opacity=".93"/>
+<rect x="300" y="220" width="1000" height="260" rx="22" fill="#0d2237"/>
+<line x1="800" y1="220" x2="800" y2="480" stroke="#8eb7d7" stroke-width="4" opacity=".35"/>
+<rect x="420" y="560" width="760" height="80" rx="16" fill="#111b28" stroke="#f3bd59" opacity=".9"/>
+<circle cx="560" cy="335" r="86" fill="#112c45" stroke="#c9e7ff"/>
+<circle cx="1040" cy="335" r="86" fill="#28131c" stroke="#ffd188"/>
+<text x="455" y="675" font-size="42" fill="#ffd889" font-family="serif">会见室：每个沉默，都在等待问题的钥匙</text>
+</svg>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>法域之城：雨夜证词 V54 Final Public Demo</title>
+  <meta name="description" content="可直接部署到 GitHub Pages 的沉浸式法律调查视觉小说。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="rain"></div>
+  <main id="app">
+    <section id="startScreen" class="screen active hero-screen">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <span class="home-orb orb-a"></span>
+        <span class="home-orb orb-b"></span>
+        <span class="case-thread thread-a"></span>
+        <span class="case-thread thread-b"></span>
+      </div>
+
+      <div class="home-stage">
+        <section class="home-title">
+          <div class="case-tags">
+            <span>CASE FILE</span>
+            <span>LEGAL NOIR</span>
+            <span>V54 FINAL PUBLIC DEMO</span>
+          </div>
+
+          <p class="eyebrow">MODERN CHINESE LEGAL MYSTERY</p>
+          <h1 class="home-logo"><span>法域之城</span><em>雨夜证词</em></h1>
+          <p class="home-subtitle">雨声、证词、监控黑屏。把证据放上桌面，让这座城市自己开口。</p>
+
+          <div class="home-case-strip">
+            <div><strong>3</strong><small>案件</small></div>
+            <div><strong>11</strong><small>场景</small></div>
+            <div><strong>24</strong><small>证据</small></div>
+            <div><strong>7</strong><small>推理链</small></div>
+          </div>
+
+          <p class="audio-tip">最终公开试玩准备版：推荐按 第一案 → 第二案 → 第三案 顺序体验；第一案约 25–40 分钟，全流程约 60–90 分钟。推荐 Chrome / Edge / Safari 最新版，建议开启声音。</p>
+        </section>
+
+        <aside class="home-menu glass">
+          <div class="home-menu-head">
+            <div>
+              <p class="eyebrow">MAIN MENU</p>
+              <h2>进入卷宗</h2>
+            </div>
+            <span class="menu-symbol">§</span>
+          </div>
+
+          <div class="home-primary-actions">
+            <button id="newGameBtn" class="btn gold menu-hero-btn">新游戏<span>推荐从第一案开始，按三案顺序体验</span></button>
+            <button id="continueBtn" class="btn ghost menu-hero-btn">继续存档<span>读取上次调查进度</span></button>
+          </div>
+
+          <div class="public-demo-card">
+            <p class="eyebrow">PUBLIC DEMO CANDIDATE</p>
+            <h3>建议按三案顺序试玩</h3>
+            <ul>
+              <li><strong>推荐顺序</strong><span>第一案 → 第二案 → 第三案</span></li>
+              <li><strong>预计时长</strong><span>第一案 25–40 分钟，全流程 60–90 分钟</span></li>
+              <li><strong>推荐浏览器</strong><span>Chrome / Edge / Safari 最新版</span></li>
+              <li><strong>玩法重点</strong><span>点热点、问人物、收证据、回律所推理、进法庭质证</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-section-label"><span>资料与系统</span></div>
+
+          <div class="home-secondary-actions">
+            <button id="introBtn" class="btn ghost">序章演出</button>
+            <button id="caseSelectBtn" class="btn ghost">案件大厅</button>
+            <button id="saveManagerBtn" class="btn ghost">存档管理</button>
+            <button id="galleryBtn" class="btn ghost">视觉图鉴</button>
+            <button id="charactersBtn" class="btn ghost">角色档案</button>
+            <button id="replayBtn" class="btn ghost">章节回放</button>
+            <button id="deductionBoardHeroBtn" class="btn ghost">推理棋盘</button>
+            <button id="puzzleHeroBtn" class="btn ghost">轻解谜</button>
+            <button id="voicePanelHeroBtn" class="btn ghost">语音演出</button>
+            <button id="dataPanelBtn" class="btn ghost">数据面板</button>
+            <button id="musicCreditsHeroBtn" class="btn ghost">音乐署名</button>
+            <button id="audioPackHeroBtn" class="btn ghost">音频包</button>
+            <button id="collectionBtn" class="btn ghost">结局收藏</button>
+            <button id="howBtn" class="btn ghost">玩法说明</button>
+            <button id="demoGuideBtn" class="btn ghost">试玩说明</button>
+            <button id="knownIssuesBtn" class="btn ghost">已知问题</button>
+            <button id="feedbackBtn" class="btn ghost">反馈模板</button>
+          </div>
+
+          <footer class="home-menu-foot">
+            <span>GitHub Pages Ready</span>
+            <span>静态部署 · 无需后端</span>
+          </footer>
+        </aside>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="chapterKicker">第一案：雨夜证词</p>
+          <h2 id="chapterTitle">商业区路口</h2>
+        </div>
+        <div class="hud">
+          <span id="truthScore">真相 0</span>
+          <span id="ethicsScore">正义 0</span>
+          <span id="phaseBadge">调查阶段</span>
+          <button id="caseHallBtn" class="tiny">案件大厅</button>
+          <button id="mapBtn" class="tiny">城市地图</button>
+          <button id="atlasBtn" class="tiny">证据图鉴</button>
+          <button id="charactersTopBtn" class="tiny">角色档案</button>
+          <button id="notebookBtn" class="tiny">案件笔记</button>
+          <button id="timelineBtn" class="tiny">时间线</button>
+          <button id="taskPanelBtn" class="tiny">任务</button>
+          <button id="puzzlePanelBtn" class="tiny">解谜</button>
+          <button id="deductionBoardTopBtn" class="tiny">推理棋盘</button>
+          <button id="replayTopBtn" class="tiny">回放</button>
+          <button id="savePanelBtn" class="tiny">存档</button>
+          <button id="achievementsBtn" class="tiny">成就</button>
+          <span id="musicNow">BGM：未启动</span>
+          <button id="settingsBtn" class="tiny">声音设置</button>
+          <button id="audioPackTopBtn" class="tiny">音频包</button>
+          <button id="musicCreditsTopBtn" class="tiny">署名</button>
+          <button id="voicePanelTopBtn" class="tiny">语音</button>
+          <button id="audioBtn" class="tiny">快速静音：关</button>
+          <button id="resetBtn" class="tiny">重置</button>
+        </div>
+      </header>
+
+      <div class="layout">
+        <section class="map-panel glass">
+          <div class="location-art camera-wide" id="locationArt">
+            <div id="cameraDirector" class="camera-director" aria-hidden="true">
+              <div class="camera-vignette"></div>
+              <div class="camera-spotlight"></div>
+              <div class="camera-frame-lines"><span></span><span></span></div>
+              <div id="cameraCaption" class="camera-caption"><strong>WIDE</strong><span>场景远景</span></div>
+            </div>
+            <div id="sceneMotionLayer" class="scene-motion-layer" aria-hidden="true"></div>
+            <div id="actorStageLayer" class="actor-stage-layer" aria-label="场景人物舞台"></div>
+            <div id="hotspotLayer" class="hotspot-layer" aria-label="场景可调查热点"></div>
+          </div>
+          <div class="location-info">
+            <h3 id="locationName">商业区路口</h3>
+            <p id="locationDesc">霓虹与警戒线在雨水里扭成一团。</p>
+          </div>
+          <div id="locationActions" class="action-grid"></div>
+        </section>
+
+        <aside class="side-panel">
+          <div class="glass objective">
+            <p class="eyebrow">章节目标</p>
+            <h3 id="objectiveTitle">找到关键线索</h3>
+            <p id="objectiveText">证据不是答案，它只是把你推到更难的问题面前。</p>
+            <div id="taskTracker" class="task-tracker"></div>
+            <div id="locks" class="locks"></div>
+          </div>
+          <div class="glass inventory">
+            <div class="panel-title">
+              <h3>证据包</h3>
+              <span id="evidenceCount">0 / 24</span>
+            </div>
+            <div id="evidenceList" class="evidence-list"></div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="glass dialogue-panel vn-dialogue-panel" id="dialoguePanel">
+        <div class="dialogue-ornament" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <div class="portrait" id="speakerPortrait"></div>
+          <div class="speaker-status" id="speakerStatus">ON RECORD</div>
+        </div>
+        <div class="dialogue-main">
+          <div class="speaker-line">
+            <span id="speakerName">系统</span>
+            <span id="speakerRole">调查记录</span>
+          </div>
+          <p id="dialogueText">雨越下越密，你抵达商业区路口。</p>
+          <div id="choiceList" class="choice-list"></div>
+        </div>
+      </section>
+
+      <section class="visual-strip glass">
+        <div class="strip-item"><span>01</span><strong>调查取证</strong><small>搜集线索，还原现场</small></div>
+        <div class="strip-arrow">›</div>
+        <div class="strip-item"><span>02</span><strong>会见询问</strong><small>追问证人，撬开沉默</small></div>
+        <div class="strip-arrow">›</div>
+        <div class="strip-item"><span>03</span><strong>证据组合</strong><small>让事实彼此作证</small></div>
+        <div class="strip-arrow">›</div>
+        <div class="strip-item"><span>04</span><strong>法庭对决</strong><small>用链条抵抗偏见</small></div>
+        <div class="strip-arrow">›</div>
+        <div class="strip-item"><span>05</span><strong>终案判决</strong><small>每个选择都有回声</small></div>
+      </section>
+      <nav class="process" id="chapterNav"></nav>
+    </section>
+
+
+
+
+    <section id="cgIllustrationOverlay" class="cg-illustration-overlay hidden" aria-hidden="true">
+      <div class="cg-illustration-grain" aria-hidden="true"></div>
+      <div class="cg-illustration-frame">
+        <div class="cg-illustration-topline">
+          <span id="cgKicker">CG ILLUSTRATION</span>
+          <span id="cgModeLabel">关键画面</span>
+        </div>
+        <h2 id="cgTitle">关键剧情插图</h2>
+        <p id="cgNarration">画面说明</p>
+        <div id="cgScene" class="cg-scene type-rain">
+          <div id="cgBackdrop" class="cg-backdrop"></div>
+          <div id="cgFx" class="cg-fx-layer"></div>
+          <div id="cgActors" class="cg-actors-layer"></div>
+          <div id="cgCaption" class="cg-scene-caption">镜头正在建立场景气氛。</div>
+        </div>
+        <div class="cg-illustration-actions">
+          <button id="cgSkip" class="tiny">跳过</button>
+          <button id="cgContinue" class="btn gold">点击继续</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="objectCloseupOverlay" class="object-closeup-overlay hidden" aria-hidden="true">
+      <div class="object-closeup-backdrop" aria-hidden="true"></div>
+      <div id="objectCloseupCard" class="object-closeup-card type-document">
+        <div class="object-closeup-head">
+          <div>
+            <p id="objectCloseupKicker">OBJECT CLOSE-UP</p>
+            <h2 id="objectCloseupTitle">证据特写</h2>
+            <span id="objectCloseupMeta">案件关联 / 证据类型</span>
+          </div>
+          <button id="objectCloseupSkip" class="close" aria-label="关闭特写">×</button>
+        </div>
+        <div class="object-closeup-body">
+          <div id="objectCloseupVisual" class="object-closeup-visual"></div>
+          <div class="object-closeup-info">
+            <h3>调查记录</h3>
+            <p id="objectCloseupDesc">证据说明</p>
+            <div id="objectCloseupTags" class="object-closeup-tags"></div>
+            <div class="object-closeup-actions">
+              <button id="objectCloseupCollect" class="btn gold">收进卷宗</button>
+              <button id="objectCloseupContinue" class="btn ghost">继续调查</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cinematicOverlay" class="cinematic-overlay hidden" aria-hidden="true">
+      <div class="cinematic-grain" aria-hidden="true"></div>
+      <div class="cinematic-frame">
+        <div class="cinematic-topline">
+          <span id="cinematicKicker">CUTSCENE</span>
+          <span id="cinematicModeLabel">分镜演出</span>
+        </div>
+        <h2 id="cinematicTitle">镜头标题</h2>
+        <p id="cinematicBody">镜头说明</p>
+        <div id="cinematicAsset" class="cinematic-asset"></div>
+        <div id="cinematicChain" class="cinematic-chain"></div>
+        <div class="cinematic-actions">
+          <button id="cinematicSkip" class="tiny">跳过演出</button>
+          <button id="cinematicNext" class="btn gold">继续</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="chapterSplash" class="chapter-splash hidden" aria-hidden="true">
+      <div class="chapter-splash-card glass">
+        <p id="splashKicker">案件推进</p>
+        <h2 id="splashTitle">商业区路口</h2>
+        <p id="splashDesc">霓虹与警戒线在雨水里扭成一团。</p>
+      </div>
+    </section>
+
+    <section id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card glass">
+        <button id="closeModal" class="close">×</button>
+        <h2 id="modalTitle">玩法说明</h2>
+        <div id="modalBody"></div>
+      </div>
+    </section>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+  </main>
+  <script src="./data/game-data.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760">
+<rect width="600" height="760" rx="36" fill="#061020"/>
+<circle cx="300" cy="220" r="118" fill="#d9b69c"/>
+<path d="M185 220 C195 75 412 70 421 230 C372 162 250 162 185 220Z" fill="#08111d"/>
+<path d="M150 720 C165 480 230 360 300 360 C370 360 435 480 450 720Z" fill="#29465a"/>
+<text x="52" y="620" font-size="44" fill="#fff2c2" font-family="serif" font-weight="800">李娜 护士</text>
+</svg>
